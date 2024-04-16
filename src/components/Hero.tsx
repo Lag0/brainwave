@@ -7,6 +7,7 @@ import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
 import Generating from "./ui/Generating";
 import Notification from "./ui/Notification";
+import CompanyLogos from "./CompanyLogos";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -43,8 +44,9 @@ const Hero = () => {
         </div>
         <div className="relative mx-auto max-w-[23rem] md:max-w-5xl xl:mb-24">
           <div className="relative z-1 rounded-2xl bg-conic-gradient p-0.5">
-            <div className="relative rounded-[1rem] bg-n-8/80">
+            <div className="relative rounded-[1rem] bg-n-8">
               <div className="bg-m-10 h-[1.4rem] rounded-t-[0.9rem]" />
+
               <div className="aspect-[33/40] overflow-hidden rounded-b-[0.9rem] md:aspect-[688/490] lg:aspect-[1024/490]">
                 <img
                   src={robot}
@@ -53,9 +55,11 @@ const Hero = () => {
                   width={1024}
                   height={490}
                 />
+
                 <ScrollParallax>
                   <Generating className="absolute bottom-5 left-4 right-4 md:bottom-8 md:left-1/2 md:right-auto md:w-[31rem] md:-translate-x-1/2" />
                 </ScrollParallax>
+
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="absolute -left-[5.5rem] bottom-[7.5rem] hidden rounded-2xl border border-n-1/10 bg-n-9/40 px-1 py-1 backdrop-blur xl:flex">
                     {heroIcons.map((icon, index) => (
@@ -70,6 +74,7 @@ const Hero = () => {
                     ))}
                   </ul>
                 </ScrollParallax>
+
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="absolute -right-[5.5rem] bottom-[11rem] hidden w-[18rem] xl:flex"
@@ -90,9 +95,13 @@ const Hero = () => {
               className="w-full"
             />
           </div>
+
           <BackgroundCircles />
         </div>
+
+        <CompanyLogos className="relative z-10 mt-20 hidden lg:block" />
       </div>
+
       <BottomLine />
     </Section>
   );

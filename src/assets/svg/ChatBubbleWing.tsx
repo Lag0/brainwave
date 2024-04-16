@@ -1,6 +1,17 @@
-const ChatBubbleWing = ({ className, pathClassName }) => {
+import { ComponentProps } from "react";
+
+interface ChatBubbleWingProps extends ComponentProps<"svg"> {
+  pathClassName?: string;
+}
+
+const ChatBubbleWing = ({
+  className,
+  pathClassName,
+  ...props
+}: ChatBubbleWingProps) => {
   return (
     <svg
+      {...props}
       className={`${className || ""}`}
       xmlns="http://www.w3.org/2000/svg"
       width="26"
