@@ -1,7 +1,7 @@
 import PlusSvg from "./PlusSvg";
 
 interface SectionSvgProps {
-  crossesOffset?: boolean;
+  crossesOffset?: string;
 }
 
 const SectionSvg = ({ crossesOffset }: SectionSvgProps) => {
